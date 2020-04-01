@@ -22,9 +22,12 @@ class MessageTest extends TestCase
 
     public function send_message()
     {
-        $this->withoutExceptionHandling();
+        $message = factory("App\Message")->create();
 
-        $this->post('/messages', ['message' => $this->faker->paragraph])->assertRedirect('/messages');
+        $this->post('/messages', $message->text)
+            ->assertRedirect('/messages')
+            ->assertSuccessful();
+            
         $this->assertDatabaseHas('messages', ['message' => $this->faker->paragraph]);
         $this->assertCount(1, Message::all());
     }
@@ -33,13 +36,9 @@ class MessageTest extends TestCase
 
     public function fetch_message()
     {
-        $this->withoutExceptionHandling();
+        $message = factory("App\Message")->create();
 
-        $message = factory('App\Message')->create();
-
-        $this->get($message->path())
-            ->assertSee($message->curso)
-            ->assertSee($message->descripcion);   
+        $this->get($message->path())->assertSee($message->text);   
 
     }
 

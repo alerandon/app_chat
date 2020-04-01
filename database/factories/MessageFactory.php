@@ -6,7 +6,10 @@ use App\Message;
 use Faker\Generator as Faker;
 
 $factory->define(Message::class, function (Faker $faker) {
+
+    $user = rand(1, 10);
+
     return [
-        'message' => $faker->paragraph
+        'text' => $faker->paragraphs()
     ];
 });

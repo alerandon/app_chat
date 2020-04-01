@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Message;
-use App\User;
 
 class ChatController extends Controller
 {
@@ -21,18 +20,18 @@ class ChatController extends Controller
 
     public function fetchMessages()
     {
-        return Message::with('user')->get();
+        $messages = Message::with('user')->get();
+
+        return response()->json($messages);
     }
 
     public function sendMessage(Request $request)
     {
-        $id = Auth::id();
-        $user = User::find($id);
-
-        $user->messages()->create([
-            'message' => $request->message
+        $message = Message::create([
+            'user_id' => auth()->id(),
+            'text' => $request->all()
         ]);
 
-        return ['status' => 'success'];
+        return response()->json($message);
     }
 }

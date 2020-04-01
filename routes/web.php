@@ -18,10 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/chat', 'ChatController@index');
+Route::get('/chat', 'ChatController@index')->name('chat');
 
-Route::get('/messages', 'ChatController@fetchMessages');
-Route::post('/messages', 'ChatController@sendMessages');
+Route::get('/messages', 'ChatController@fetchMessages')->name('messages');
+Route::post('/messages', 'ChatController@sendMessage');
 
 Auth::routes();
 

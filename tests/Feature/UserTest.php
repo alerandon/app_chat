@@ -6,10 +6,10 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\User;
+
 class UserTest extends TestCase
 {
-    use RefreshDatabase;
-    use WithFaker;
+    use WithFaker, RefreshDatabase;
 
     /**
      * A basic feature test example.
@@ -19,18 +19,60 @@ class UserTest extends TestCase
     
     /** @test */
 
-    public function add_user() {
+    public function register_user() {
 
-        $user = [
-            'name' => $this->faker->sentence,
-            'email' => $this->faker->unique()->safeEmail,
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+        $user = factory(User::class)->create();
+
+        $attributes = [
+            'name' => $user->name,
+            'email' => $user->email,
+            'password' => $user->password,
         ];
 
-        $this->post('/register', $user)->assertRedirect('/');
-            
-        $this->assertDatabaseHas('users', $user);
+        $this->post('/register', $attributes)->assertRedirect('/');
+
+        $this->assertDatabaseHas('users', $attributes);
         $this->assertCount(1, User::all());
         
     }
+
+    /** @test */
+
+    public function login_user() {
+
+        $user = factory(User::class)->create([
+            'password' => bcrypt($password = 'heyiamthepasswordboy'),
+        ]);
+
+        $attributes = [
+            'email' => $user->email,
+            'password' => $password,
+        ];
+        
+        $this->post('/login', $attributes)->assertRedirect('/');
+
+        $this->assertAuthenticatedAs($user);
+
+    }
+
+    /** @test */
+
+    public function email_is_required() {
+        
+        $user = factory(User::class)->raw(['email' => '']);
+
+        $this->post('/login', $user)->assertSessionHasErrors('email');
+
+    }
+
+    /** @test */
+
+    public function password_is_required() {
+        
+        $user = factory(User::class)->raw(['password' => '']);
+
+        $this->post('/login', $user)->assertSessionHasErrors('password');
+            
+    }
+
 }

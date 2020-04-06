@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+<div class="container flex content-center justify-center">
+
+            <div class="bg-blue-200 w-1/6">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -71,7 +70,6 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
+
 </div>
 @endsection

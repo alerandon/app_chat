@@ -8,6 +8,8 @@ class Message extends Model
 {
     protected $fillable = ['user_id, text'];
 
+    protected $guarded = [];
+
     public function user()
     {
         return $this->belongsTo('App\User');

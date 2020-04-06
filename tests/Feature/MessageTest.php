@@ -9,8 +9,7 @@ use App\Message;
 
 class MessageTest extends TestCase
 {
-    use RefreshDatabase;
-    use WithFaker;
+    use WithFaker, RefreshDatabase;
 
     /**
      * A basic feature test example.
@@ -22,13 +21,22 @@ class MessageTest extends TestCase
 
     public function send_message()
     {
-        $message = factory("App\Message")->create();
+        $this->withoutExceptionHandling();
 
-        $this->post('/messages', $message->text)
+        $message = factory(Message::class)->create();
+
+        $attributes = [
+            'user_id' => $message->user_id,
+            'message' => $message->text,
+        ];
+
+        dd($attributes);
+
+        $this->post('/messages', $attributes)
             ->assertRedirect('/messages')
             ->assertSuccessful();
             
-        $this->assertDatabaseHas('messages', ['message' => $this->faker->paragraph]);
+        $this->assertDatabaseHas('messages', $attributes);
         $this->assertCount(1, Message::all());
     }
 
@@ -36,9 +44,11 @@ class MessageTest extends TestCase
 
     public function fetch_message()
     {
-        $message = factory("App\Message")->create();
+        $this->withoutExceptionHandling();
 
-        $this->get($message->path())->assertSee($message->text);   
+        $message = factory(Message::class)->create();
+
+        $this->get('/message')->assertSee($message->text);   
 
     }
 

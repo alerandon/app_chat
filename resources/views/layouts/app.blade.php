@@ -22,9 +22,11 @@
 <body>
     <div id="app">
 
-        <div class="">
-            
-        </div>
+        <nav class="bg-blue-700 p-3 mb-5">
+            <div class="justify-center">
+                <p class="text-white font-sans font-medium text-center text-xl">The Chat</p>
+            </div>
+        </nav>
 
         @yield('content');
 

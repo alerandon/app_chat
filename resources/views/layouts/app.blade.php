@@ -20,12 +20,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
 </head>
-<body class="bg-gray-300 text-gray-800">
+<body class="bg-gray-300 text-gray-700">
     <div id="app">
 
-        <nav class="bg-blue-900 p-3 mb-12">
-            <div class="justify-center">
-                <p class="text-white font-sans font-medium text-xl pl-5">The Chat</p>
+        <nav class="bg-blue-800 p-3 mb-12">
+            <div class="pl-5">
+                <a href="/" class="text-white font-sans font-medium text-xl">The Chat</a>
             </div>
         </nav>
 

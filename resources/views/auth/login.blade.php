@@ -3,7 +3,7 @@
 @section('content')
 <div class="container flex justify-center mx-auto">
 
-            <div class="bg-gray-100 p-5 rounded-lg w-4/6 sm:w-3/6 lg:w-2/6">
+            <div class="bg-gray-100 p-5 mb-10 rounded-lg w-4/6 sm:w-3/6 lg:w-2/6">
                 <div class="flex text-center justify-center">
                     <h1 class="font-medium text-xl">{{ __('Login') }}</h1>
                 </div>
@@ -45,7 +45,7 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="font-medium mb-1" for="remember">
+                                    <label class="font-medium text-xs mb-1" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
@@ -54,17 +54,21 @@
 
                         <div class="my-2">
                             <div class="flex flex-col">
-                                <button type="submit" class="bg-blue-800 hover:bg-blue-700 text-white font-bold py-2 px-4 mb-2 rounded">
+                                <button type="submit" class="bg-blue-800 hover:bg-blue-700 text-white font-normal py-2 px-4 mb-2 rounded">
                                     {{ __('Login') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
-                                <div class="inline-block">
-                                    <a class="" href="{{ route('password.request') }}">
+                               
+                                <div class="flex-col text-center inline-block">
+                                     @if (Route::has('password.request'))
+                                     <a class="text-xs font-normal text-blue-600 hover:underline" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
+                                    @endif
+                                    <p class="text-xs mt-1">Are you new? 
+                                    <a href="/register" class=" font-normal text-blue-600 hover:underline">Register here</a></p>
                                 </div>
-                                @endif
+                                
                             </div>
                         </div>
                     </form>

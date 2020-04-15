@@ -23,6 +23,6 @@ Route::get('/chat', 'ChatController@index')->name('chat');
 Route::get('/messages', 'ChatController@fetchMessages')->name('messages');
 Route::post('/messages', 'ChatController@sendMessage');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');

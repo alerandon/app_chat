@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <div class="-mt-12 m-0">
+  <div class="-mt-12">
     <sub-navbar></sub-navbar>
     <chat></chat>
   </div>

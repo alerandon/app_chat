@@ -1,5 +1,5 @@
 <template>
-    <nav class="bg-gray-100 p-2 z-10">
+    <nav class="bg-gray-100 p-2 absolute w-full top-subnav">
       <div class="flex justify-center">
         <div class="flex justify-center w-1/2">
           <p class="text-sm">Chat</p>

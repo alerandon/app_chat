@@ -1968,6 +1968,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -47322,17 +47325,20 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "h-full w-full" }, [
+    return _c("div", {}, [
       _c(
         "div",
-        { staticClass: "flex w-full h-chatbox px-5 py-2 overflow-y-auto" },
+        {
+          staticClass:
+            "flex absolute w-full bottom-chat_bottom top-chat_top px-5 py-2 overflow-y-auto"
+        },
         [
           _c("div", { staticClass: "flex flex-col" }, [
             _c(
               "div",
               {
                 staticClass:
-                  "bg-gray-100 w-auto inline-block px-3 py-2 mb-2 rounded-lg"
+                  "bg-gray-100 w-auto inline-block px-3 py-2 m-1 rounded-lg"
               },
               [
                 _c("p", { staticClass: "text-xs opacity-75" }, [
@@ -47349,7 +47355,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "bg-gray-100 w-auto inline-block px-3 py-2 mb-2 rounded-lg"
+                  "bg-gray-100 w-auto inline-block px-3 py-2 m-1 rounded-lg"
               },
               [
                 _c("p", { staticClass: "text-xs opacity-75" }, [
@@ -47366,7 +47372,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "bg-gray-100 w-auto inline-block px-3 py-2 mb-2 rounded-lg"
+                  "bg-gray-100 w-auto inline-block px-3 py-2 m-1 rounded-lg"
               },
               [
                 _c("p", { staticClass: "text-xs opacity-75" }, [
@@ -47383,7 +47389,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "bg-gray-100 w-auto inline-block px-3 py-2 mb-2 rounded-lg"
+                  "bg-gray-100 w-auto inline-block px-3 py-2 m-1 rounded-lg"
               },
               [
                 _c("p", { staticClass: "text-xs opacity-75" }, [
@@ -47400,7 +47406,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "bg-gray-100 w-auto inline-block px-3 py-2 mb-2 rounded-lg"
+                  "bg-gray-100 w-auto inline-block px-3 py-2 m-1 rounded-lg"
               },
               [
                 _c("p", { staticClass: "text-xs opacity-75" }, [
@@ -47417,7 +47423,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "bg-gray-100 w-auto inline-block px-3 py-2 mb-2 rounded-lg"
+                  "bg-gray-100 w-auto inline-block px-3 py-2 m-1 rounded-lg"
               },
               [
                 _c("p", { staticClass: "text-xs opacity-75" }, [
@@ -47434,7 +47440,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "bg-gray-100 w-auto inline-block px-3 py-2 mb-2 rounded-lg"
+                  "bg-gray-100 w-auto inline-block px-3 py-2 m-1 rounded-lg"
               },
               [
                 _c("p", { staticClass: "text-xs opacity-75" }, [
@@ -47451,7 +47457,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "bg-gray-100 w-auto inline-block px-3 py-2 mb-2 rounded-lg"
+                  "bg-gray-100 w-auto inline-block px-3 py-2 m-1 rounded-lg"
               },
               [
                 _c("p", { staticClass: "text-xs opacity-75" }, [
@@ -47468,7 +47474,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "bg-gray-100 w-auto inline-block px-3 py-2 mb-2 rounded-lg"
+                  "bg-gray-100 w-auto inline-block px-3 py-2 m-1 rounded-lg"
               },
               [
                 _c("p", { staticClass: "text-xs opacity-75" }, [
@@ -47485,7 +47491,7 @@ var staticRenderFns = [
               "div",
               {
                 staticClass:
-                  "bg-gray-100 w-auto inline-block px-3 py-2 mb-2 rounded-lg"
+                  "bg-gray-100 w-auto inline-block px-3 py-2 m-1 rounded-lg"
               },
               [
                 _c("p", { staticClass: "text-xs opacity-75" }, [
@@ -47503,15 +47509,34 @@ var staticRenderFns = [
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "flex bg-gray-300 justify-start w-full h-auto p-2" },
+        {
+          staticClass:
+            "bg-gray-300 flex justify-start absolute w-full bottom-0 justify-start px-2 py-1"
+        },
         [
+          _c("img", {
+            staticClass: "w-8 h-10 mr-1",
+            attrs: { src: "/assets/file.svg", rel: "files" }
+          }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "w-8 h-10 mr-2",
+            attrs: { src: "/assets/emoji.svg", rel: "emoji" }
+          }),
+          _vm._v(" "),
           _c("input", {
-            staticClass: "bg-gray-100 rounded-lg p-2 w-9/12",
+            staticClass: "bg-gray-100 rounded-lg p-2 w-full",
             attrs: {
               type: "text",
               name: "message",
               placeholder: "Message here"
             }
+          }),
+          _vm._v(" "),
+          _c("input", {
+            staticClass:
+              "bg-blue-800 hover:bg-blue-700 text-white font-normal rounded p-2 ml-2",
+            attrs: { type: "submit", name: "send", value: "Send" }
           })
         ]
       )
@@ -47546,17 +47571,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "bg-gray-100 p-2 z-10" }, [
-      _c("div", { staticClass: "flex justify-center" }, [
-        _c("div", { staticClass: "flex justify-center w-1/2" }, [
-          _c("p", { staticClass: "text-sm" }, [_vm._v("Chat")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex justify-center w-1/2" }, [
-          _c("p", { staticClass: "text-sm" }, [_vm._v("Users")])
+    return _c(
+      "nav",
+      { staticClass: "bg-gray-100 p-2 absolute w-full top-subnav" },
+      [
+        _c("div", { staticClass: "flex justify-center" }, [
+          _c("div", { staticClass: "flex justify-center w-1/2" }, [
+            _c("p", { staticClass: "text-sm" }, [_vm._v("Chat")])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "flex justify-center w-1/2" }, [
+            _c("p", { staticClass: "text-sm" }, [_vm._v("Users")])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   }
 ]
 render._withStripped = true

@@ -2,15 +2,19 @@ module.exports = {
   theme: {
     extend: {
  
+      width: {
+        'subnav': '180px',
+      },
+
       height: {
-        'chat': '75vh',
-        'fixed': '600px'
+        'subnav': '32px'
       },
       
       inset: {
         'subnav': '47px',
         'chat_bottom': '49px',
-        'chat_top': '83px'
+        'chat_top': '83px',
+        'user_right': '400px'
       }
       
     }

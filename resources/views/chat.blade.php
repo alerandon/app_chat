@@ -22,13 +22,13 @@
       </div>
     </nav>
     
-    <router-view class=""></router-view>
+    <router-view></router-view>
     
   </div>
 
-      <div class="hidden md:flex w-full h-full">
-        <users class="md:w-3/12 lg:w-2/12"></users>
-        <chat class="md:w-9/12 lg:w-10/12"></chat>
-      </div>
+  <div class="hidden md:flex w-full h-full">
+    <users class="md:w-3/12 lg:w-2/12 xxl:w-1/12"></users>
+    <chat class="md:w-9/12 lg:w-10/12 xxl:w-11/12"></chat>
+  </div>    
     
 @endsection

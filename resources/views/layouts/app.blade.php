@@ -26,11 +26,15 @@
 <body class="bg-gray-300 text-gray-700">
     <div id="app">
 
-        <nav class="bg-blue-800 p-2 mb-12 sticky w-full top-0 z-10">
-            <div class="pl-3">
-                <p class="text-white font-sans font-medium text-xl">The Chat</p>
-            </div>
+        <nav class="bg-blue-800 flex h-12 p-2 mb-12 sticky w-full top-0 z-10">
+          <div class="flex justify-start pl-3 w-1/2">
+            <p class="text-white font-sans font-medium text-xl">The Chat</p>
+          </div>
+          <div class="flex justify-end pr-8 w-1/2">
+          <user_dropdown logout-route="{{ route('logout') }}"></user_dropdown>
+          </div>
         </nav>
+
 
         @yield('content')
 

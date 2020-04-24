@@ -23,19 +23,27 @@ window.Vue = require('vue');
 
 Vue.use(VueRouter)
 
-const routes = [
-  { path: '/chat', component: require('./components/Chat.vue').default },
-  { path: '/users', component: require('./components/Users.vue').default}
-]
 
 const router = new VueRouter({
   mode: 'history',
-  routes
+  routes: [
+    {
+      path: '/chat',
+      name: 'chat',
+      component: require('./components/Chat.vue').default,
+    },        
+    {
+      path: '/users',
+      name: 'users',
+      component: require('./components/Users.vue').default,
+    }
+  ]
 })
 
 
 Vue.component('chat', require('./components/Chat.vue').default);
 Vue.component('users', require('./components/Users.vue').default);
+Vue.component('user_dropdown', require('./components/UserDropdown.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -47,3 +55,7 @@ const app = new Vue({
     el: '#app',
     router
 });
+
+
+
+//let view_width = window.innerWidth;

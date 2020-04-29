@@ -4,10 +4,10 @@
           <h1 class="text-lg text-center xl:text-left xl:pl-5 font-bold mb-2">Users connected</h1>
           <div class="overflow-y-auto">
             <ul class="">
-                <li class="hover:bg-gray-200 pl-5 md:pl-10 py-1 mx-5 md:mx-auto">&bull; Brandon</li>
-                <li class="hover:bg-gray-200 pl-5 md:pl-10 py-1 mx-5 md:mx-auto">&bull; Jose</li>
-                <li class="hover:bg-gray-200 pl-5 md:pl-10 py-1 mx-5 md:mx-auto">&bull; Ricardo</li>
-                <li class="hover:bg-gray-200 pl-5 md:pl-10 py-1 mx-5 md:mx-auto">&bull; Emily</li>
+                <li class="hover:bg-gray-200 pl-5 md:pl-10 lg:pl-5 py-1 mx-5 md:mx-auto">&bull; Brandon</li>
+                <li class="hover:bg-gray-200 pl-5 md:pl-10 lg:pl-5 py-1 mx-5 md:mx-auto">&bull; Jose</li>
+                <li class="hover:bg-gray-200 pl-5 md:pl-10 lg:pl-5 py-1 mx-5 md:mx-auto">&bull; Ricardo</li>
+                <li class="hover:bg-gray-200 pl-5 md:pl-10 lg:pl-5 py-1 mx-5 md:mx-auto">&bull; Emily</li>
             </ul>
           </div>
       </div>

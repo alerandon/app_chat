@@ -2,8 +2,12 @@ module.exports = {
   theme: {
     extend: {
  
-      width: {
-        'subnav': '180px',
+      minWidth: {
+        '10': '40px',
+      },
+
+      maxWidth: {
+        'message': '80%',
       },
 
       height: {

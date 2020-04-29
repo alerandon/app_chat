@@ -9,7 +9,7 @@
       </p>    
     </button>
     <div :class="isOpen ? 'block' : 'hidden'" class="absolute right-0 py-2 mr-3 w-32 bg-gray-100 rounded-lg z-20 shadow-xl">
-      <a href="#" class="block hover:bg-gray-300 px-4 py-2">Sign out</a>
+      <a href="#" class="block hover:text-blue-500 px-4 py-2">Sign out</a>
     </div>        
   </div>
 

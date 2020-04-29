@@ -41,6 +41,7 @@ const router = new VueRouter({
 })
 
 
+Vue.component('navbar', require('./components/Navbar.vue').default);
 Vue.component('chat', require('./components/Chat.vue').default);
 Vue.component('users', require('./components/Users.vue').default);
 Vue.component('user_dropdown', require('./components/UserDropdown.vue').default);

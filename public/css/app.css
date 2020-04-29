@@ -5203,6 +5203,10 @@ video {
   max-width: 1800px;
 }
 
+.max-w-message {
+  max-width: 80%;
+}
+
 .min-h-0 {
   min-height: 0;
 }
@@ -5217,6 +5221,10 @@ video {
 
 .min-w-0 {
   min-width: 0;
+}
+
+.min-w-10 {
+  min-width: 40px;
 }
 
 .min-w-full {
@@ -11686,10 +11694,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-subnav {
-  width: 180px;
 }
 
 .z-0 {
@@ -18704,6 +18708,10 @@ video {
     max-width: 1800px;
   }
 
+  .sm\:max-w-message {
+    max-width: 80%;
+  }
+
   .sm\:min-h-0 {
     min-height: 0;
   }
@@ -18718,6 +18726,10 @@ video {
 
   .sm\:min-w-0 {
     min-width: 0;
+  }
+
+  .sm\:min-w-10 {
+    min-width: 40px;
   }
 
   .sm\:min-w-full {
@@ -25187,10 +25199,6 @@ video {
 
   .sm\:w-screen {
     width: 100vw;
-  }
-
-  .sm\:w-subnav {
-    width: 180px;
   }
 
   .sm\:z-0 {
@@ -32206,6 +32214,10 @@ video {
     max-width: 1800px;
   }
 
+  .md\:max-w-message {
+    max-width: 80%;
+  }
+
   .md\:min-h-0 {
     min-height: 0;
   }
@@ -32220,6 +32232,10 @@ video {
 
   .md\:min-w-0 {
     min-width: 0;
+  }
+
+  .md\:min-w-10 {
+    min-width: 40px;
   }
 
   .md\:min-w-full {
@@ -38689,10 +38705,6 @@ video {
 
   .md\:w-screen {
     width: 100vw;
-  }
-
-  .md\:w-subnav {
-    width: 180px;
   }
 
   .md\:z-0 {
@@ -45708,6 +45720,10 @@ video {
     max-width: 1800px;
   }
 
+  .lg\:max-w-message {
+    max-width: 80%;
+  }
+
   .lg\:min-h-0 {
     min-height: 0;
   }
@@ -45722,6 +45738,10 @@ video {
 
   .lg\:min-w-0 {
     min-width: 0;
+  }
+
+  .lg\:min-w-10 {
+    min-width: 40px;
   }
 
   .lg\:min-w-full {
@@ -52191,10 +52211,6 @@ video {
 
   .lg\:w-screen {
     width: 100vw;
-  }
-
-  .lg\:w-subnav {
-    width: 180px;
   }
 
   .lg\:z-0 {
@@ -59210,6 +59226,10 @@ video {
     max-width: 1800px;
   }
 
+  .xl\:max-w-message {
+    max-width: 80%;
+  }
+
   .xl\:min-h-0 {
     min-height: 0;
   }
@@ -59224,6 +59244,10 @@ video {
 
   .xl\:min-w-0 {
     min-width: 0;
+  }
+
+  .xl\:min-w-10 {
+    min-width: 40px;
   }
 
   .xl\:min-w-full {
@@ -65693,10 +65717,6 @@ video {
 
   .xl\:w-screen {
     width: 100vw;
-  }
-
-  .xl\:w-subnav {
-    width: 180px;
   }
 
   .xl\:z-0 {
@@ -72712,6 +72732,10 @@ video {
     max-width: 1800px;
   }
 
+  .xxl\:max-w-message {
+    max-width: 80%;
+  }
+
   .xxl\:min-h-0 {
     min-height: 0;
   }
@@ -72726,6 +72750,10 @@ video {
 
   .xxl\:min-w-0 {
     min-width: 0;
+  }
+
+  .xxl\:min-w-10 {
+    min-width: 40px;
   }
 
   .xxl\:min-w-full {
@@ -79195,10 +79223,6 @@ video {
 
   .xxl\:w-screen {
     width: 100vw;
-  }
-
-  .xxl\:w-subnav {
-    width: 180px;
   }
 
   .xxl\:z-0 {

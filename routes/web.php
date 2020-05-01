@@ -15,7 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    if (Auth::check()) {
+        return redirect('chat');
+    } 
+    else {
+        return redirect('login');
+    }
 });
 
 Route::get('/chat', 'ChatController@index')->name('chat');
@@ -23,6 +28,7 @@ Route::get('/chat', 'ChatController@index')->name('chat');
 Route::get('/messages', 'ChatController@fetchMessages')->name('messages');
 Route::post('/messages', 'ChatController@sendMessage');
 
-Auth::routes(['verify' => true]);
+Auth::routes();
+Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');

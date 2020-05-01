@@ -9,10 +9,6 @@ module.exports = {
       maxWidth: {
         'message': '80%',
       },
-
-      height: {
-        'subnav': '32px'
-      },
       
       inset: {
         'subnav': '47px',
@@ -23,7 +19,7 @@ module.exports = {
       },
 
       screens: {
-        'xxl': '1800px'
+        'xxl': '2100px'
       }
       
     }

@@ -58,13 +58,15 @@
 
         </div>
 
-        <div class="bg-gray-300 flex justify-start absolute w-full md:w-9/12 lg:w-10/12 xxl:w-11/12 bottom-0 justify-start px-2 py-1 z-10">
+        <div class="bg-gray-300 absolute w-full md:w-9/12 lg:w-10/12 xxl:w-11/12 bottom-0 z-10">
+          <div class="flex justify-start px-2 py-1">
             <img class="w-6 h-8 mt-1 mr-2" src="/assets/file-solid.svg" rel="files">
             <img class="w-6 h-8 mt-1 mr-2" src="/assets/grin-solid.svg" rel="emoji">
             <textarea class="bg-gray-100 rounded-full px-4 py-2 w-full focus:outline-none resize-none break-words" rows="1" wrap="hard" name="message" placeholder="Message here" required autocomplete="on" autofocus></textarea>
             <button type="submit" class="flex justify-center bg-blue-800 hover:bg-blue-700 focus:outline-none text-white block font-normal rounded-full w-10 min-w-10 h-10 ml-2">
                 <img type="image" src="/assets/paper-plane-solid.svg" class="w-5 h-5" rel="Send">
             </button>
+          </div>
         </div>
 
     </div>        

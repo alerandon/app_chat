@@ -24,12 +24,19 @@
 
 </head>
 <body class="bg-gray-300 text-gray-700">
-    <div id="app">
+  <div id="app">
 
-      <navbar></navbar>
+    <navbar 
+      @auth          
+        auth_user="{{ $auth_users }}"  
+        sign_out="{{ route('logout') }} "
+        user_logged="{{ $user }}" 
+      @endauth
+    >
+    </navbar>
       
       @yield('content')
 
-    </div>
+  </div>
 </body>
 </html>

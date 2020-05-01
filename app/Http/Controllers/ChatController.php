@@ -10,12 +10,15 @@ class ChatController extends Controller
 {
     public function __construct()
     {
-        //$this->middleware('auth');
+        $this->middleware('auth');
     }
 
     public function index() 
     {
-        return view('chat');
+        $auth_users = Auth::check();
+        $user = Auth::user()->name;
+        //dd($user);
+        return view('chat', compact('auth_users', 'user'));
     }
 
     public function fetchMessages()

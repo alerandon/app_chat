@@ -9,13 +9,13 @@
         
           <div class="w-1/2">
             <router-link to="/chat" class="flex" active-class="border-b-2 border-gray-700">
-              <p class="text-sm text-center w-full h-subnav p-2">Chat</p>
+              <p class="text-sm text-center w-full h-8 p-2">Chat</p>
             </router-link>
           </div>
         
           <div class="w-1/2">
             <router-link to="/users" class="flex" active-class="border-b-2 border-gray-700">
-              <p class="text-sm text-center w-full h-subnav p-2">Users</p>
+              <p class="text-sm text-center w-full h-8 p-2">Users</p>
             </router-link>
           </div>
 

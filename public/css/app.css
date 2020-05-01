@@ -623,9 +623,9 @@ video {
   }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 2100px) {
   .container {
-    max-width: 1800px;
+    max-width: 2100px;
   }
 }
 
@@ -3907,10 +3907,6 @@ video {
   height: 100vh;
 }
 
-.h-subnav {
-  height: 32px;
-}
-
 .leading-3 {
   line-height: .75rem;
 }
@@ -5200,7 +5196,7 @@ video {
 }
 
 .max-w-screen-xxl {
-  max-width: 1800px;
+  max-width: 2100px;
 }
 
 .max-w-message {
@@ -17412,10 +17408,6 @@ video {
     height: 100vh;
   }
 
-  .sm\:h-subnav {
-    height: 32px;
-  }
-
   .sm\:leading-3 {
     line-height: .75rem;
   }
@@ -18705,7 +18697,7 @@ video {
   }
 
   .sm\:max-w-screen-xxl {
-    max-width: 1800px;
+    max-width: 2100px;
   }
 
   .sm\:max-w-message {
@@ -30918,10 +30910,6 @@ video {
     height: 100vh;
   }
 
-  .md\:h-subnav {
-    height: 32px;
-  }
-
   .md\:leading-3 {
     line-height: .75rem;
   }
@@ -32211,7 +32199,7 @@ video {
   }
 
   .md\:max-w-screen-xxl {
-    max-width: 1800px;
+    max-width: 2100px;
   }
 
   .md\:max-w-message {
@@ -44424,10 +44412,6 @@ video {
     height: 100vh;
   }
 
-  .lg\:h-subnav {
-    height: 32px;
-  }
-
   .lg\:leading-3 {
     line-height: .75rem;
   }
@@ -45717,7 +45701,7 @@ video {
   }
 
   .lg\:max-w-screen-xxl {
-    max-width: 1800px;
+    max-width: 2100px;
   }
 
   .lg\:max-w-message {
@@ -57930,10 +57914,6 @@ video {
     height: 100vh;
   }
 
-  .xl\:h-subnav {
-    height: 32px;
-  }
-
   .xl\:leading-3 {
     line-height: .75rem;
   }
@@ -59223,7 +59203,7 @@ video {
   }
 
   .xl\:max-w-screen-xxl {
-    max-width: 1800px;
+    max-width: 2100px;
   }
 
   .xl\:max-w-message {
@@ -68157,7 +68137,7 @@ video {
   }
 }
 
-@media (min-width: 1800px) {
+@media (min-width: 2100px) {
   .xxl\:sr-only {
     position: absolute;
     width: 1px;
@@ -71436,10 +71416,6 @@ video {
     height: 100vh;
   }
 
-  .xxl\:h-subnav {
-    height: 32px;
-  }
-
   .xxl\:leading-3 {
     line-height: .75rem;
   }
@@ -72729,7 +72705,7 @@ video {
   }
 
   .xxl\:max-w-screen-xxl {
-    max-width: 1800px;
+    max-width: 2100px;
   }
 
   .xxl\:max-w-message {

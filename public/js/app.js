@@ -2028,12 +2028,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     UserDropdown: _UserDropdown_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['auth_user', 'sign_out', 'user_logged'],
+  props: ['auth_user', 'sign_out', 'user_logged', 'sign_in', 'register_user'],
   data: function data() {
     return {
       users: [],
@@ -2070,13 +2078,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       isOpen: false
     };
   },
-  props: ['auth_user', 'sign_out', 'user_logged']
+  props: ['auth_user', 'sign_out', 'user_logged', 'sign_in', 'register_user']
 });
 
 /***/ }),
@@ -47691,52 +47705,50 @@ var render = function() {
     _c("div", { staticClass: "flex justify-between xl:mx-6" }, [
       _vm._m(0),
       _vm._v(" "),
-      _vm.auth_user == true
-        ? _c(
-            "div",
-            { staticClass: "pr-3 xl:pr-0 w-1/2" },
+      _c(
+        "div",
+        { staticClass: "pr-3 xl:pr-0 w-1/2" },
+        [
+          _c(
+            "button",
+            {
+              staticClass: "float-right md:hidden h-8 focus:outline-none",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  _vm.isOpen = !_vm.isOpen
+                }
+              }
+            },
             [
-              _c(
-                "button",
-                {
-                  staticClass: "float-right md:hidden h-8 focus:outline-none",
-                  attrs: { type: "button" },
-                  on: {
-                    click: function($event) {
-                      _vm.isOpen = !_vm.isOpen
-                    }
-                  }
-                },
-                [
-                  !_vm.isOpen
-                    ? _c("img", {
-                        staticClass: "w-4 h-4 mb-1 inline-block",
-                        attrs: { src: "/assets/burger-menu.svg" }
-                      })
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.isOpen
-                    ? _c("img", {
-                        staticClass: "w-4 h-4 mb-1 inline-block",
-                        attrs: { src: "/assets/close-icon.svg" }
-                      })
-                    : _vm._e()
-                ]
-              ),
+              !_vm.isOpen
+                ? _c("img", {
+                    staticClass: "w-4 h-4 mb-1 inline-block",
+                    attrs: { src: "/assets/burger-menu.svg" }
+                  })
+                : _vm._e(),
               _vm._v(" "),
-              _c(
-                "UserDropdown",
-                _vm._b(
-                  { staticClass: "hidden md:block float-right" },
-                  "UserDropdown",
-                  _vm.$props,
-                  false
-                )
-              )
-            ],
-            1
+              _vm.isOpen
+                ? _c("img", {
+                    staticClass: "w-4 h-4 mb-1 inline-block",
+                    attrs: { src: "/assets/close-icon.svg" }
+                  })
+                : _vm._e()
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "UserDropdown",
+            _vm._b(
+              { staticClass: "hidden md:block float-right" },
+              "UserDropdown",
+              _vm.$props,
+              false
+            )
           )
-        : _vm._e()
+        ],
+        1
+      )
     ]),
     _vm._v(" "),
     _vm.auth_user == true
@@ -47765,7 +47777,33 @@ var render = function() {
             ])
           ]
         )
-      : _vm._e()
+      : _c(
+          "nav",
+          {
+            staticClass: "flex flex-col w-full h-auto md:hidden",
+            class: _vm.isOpen ? "block" : "hidden"
+          },
+          [
+            _c("div", { staticClass: "block px-4 py-2 border-b" }, [
+              _c(
+                "a",
+                { staticClass: "text-white", attrs: { href: _vm.sign_in } },
+                [_vm._v("Login")]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "block px-4 py-2" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "text-white hover:underline",
+                  attrs: { href: _vm.register_user }
+                },
+                [_vm._v("Register")]
+              )
+            ])
+          ]
+        )
   ])
 }
 var staticRenderFns = [
@@ -47801,59 +47839,82 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "relative" }, [
-    _c(
-      "button",
-      {
-        staticClass: "h-8 focus:outline-none",
-        attrs: { type: "button" },
-        on: {
-          click: function($event) {
-            _vm.isOpen = !_vm.isOpen
-          }
-        }
-      },
-      [
-        _c("p", { staticClass: "text-white mx-4" }, [
-          _vm._v("\n      " + _vm._s(_vm.user_logged) + "\n      "),
-          !_vm.isOpen
-            ? _c("img", {
-                staticClass: "w-4 h-4 mb-1 inline-block",
-                attrs: {
-                  src: "/assets/angle-down-solid.svg",
-                  rel: "angle down"
+  return _c("div", [
+    _vm.auth_user == true
+      ? _c("div", { staticClass: "relative" }, [
+          _c(
+            "button",
+            {
+              staticClass: "h-8 focus:outline-none",
+              attrs: { type: "button" },
+              on: {
+                click: function($event) {
+                  _vm.isOpen = !_vm.isOpen
                 }
-              })
-            : _vm._e(),
+              }
+            },
+            [
+              _c("p", { staticClass: "text-white mx-4" }, [
+                _vm._v("\n        " + _vm._s(_vm.user_logged) + "\n        "),
+                !_vm.isOpen
+                  ? _c("img", {
+                      staticClass: "w-4 h-4 mb-1 inline-block",
+                      attrs: {
+                        src: "/assets/angle-down-solid.svg",
+                        rel: "angle down"
+                      }
+                    })
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.isOpen
+                  ? _c("img", {
+                      staticClass: "w-4 h-4 mb-1 inline-block",
+                      attrs: {
+                        src: "/assets/angle-up-solid.svg",
+                        rel: "angle up"
+                      }
+                    })
+                  : _vm._e()
+              ])
+            ]
+          ),
           _vm._v(" "),
-          _vm.isOpen
-            ? _c("img", {
-                staticClass: "w-4 h-4 mb-1 inline-block",
-                attrs: { src: "/assets/angle-up-solid.svg", rel: "angle up" }
-              })
-            : _vm._e()
+          _c(
+            "div",
+            {
+              staticClass:
+                "absolute right-0 py-2 mr-3 w-32 bg-gray-100 rounded-lg z-20 shadow-xl",
+              class: _vm.isOpen ? "block" : "hidden"
+            },
+            [
+              _c(
+                "a",
+                {
+                  staticClass: "block hover:underline px-4 py-2",
+                  attrs: { href: _vm.sign_out }
+                },
+                [_vm._v("Sign out")]
+              )
+            ]
+          )
         ])
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "div",
-      {
-        staticClass:
-          "absolute right-0 py-2 mr-3 w-32 bg-gray-100 rounded-lg z-20 shadow-xl",
-        class: _vm.isOpen ? "block" : "hidden"
-      },
-      [
-        _c(
-          "a",
+      : _c(
+          "div",
           {
-            staticClass: "block hover:underline px-4 py-2",
-            attrs: { href: _vm.sign_out }
+            staticClass: "text-white font-sans mt-px inline-block align-middle"
           },
-          [_vm._v("Sign out")]
+          [
+            _c("a", { staticClass: "px-4", attrs: { href: _vm.sign_in } }, [
+              _vm._v("Login")
+            ]),
+            _vm._v(" "),
+            _c(
+              "a",
+              { staticClass: "px-4", attrs: { href: _vm.register_user } },
+              [_vm._v("Register")]
+            )
+          ]
         )
-      ]
-    )
   ])
 }
 var staticRenderFns = []

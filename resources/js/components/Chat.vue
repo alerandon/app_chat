@@ -6,52 +6,12 @@
 
             <div class="flex flex-col max-h-full px-4 pt-4 overflow-y-auto break-words">
 
-                <div class="bg-gray-100 self-start max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <div class="text-xs opacity-75">Mike</div>
-                    <div class="text-base">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam qui nemo ullam quae voluptates laborum ipsum cupiditate tempora incidunt labore placeat, tempore harum quos repellat cum provident magni quo odio doloremque quibusdam a accusantium hic impedit. Atque, ducimus, nemo optio in id deleniti cupiditate expedita repellat cumque numquam quam tenetur.</div>
+                <div class="bg-gray-100 self-start max-w-message px-3 py-2 mb-4 rounded-lg" >
+                    <div class="text-xs opacity-75">{{ message.user.name }}</div>
+                    <div class="text-base">{{  }}</div>
                 </div>
                 <div class="bg-blue-800 self-end max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <p class="text-base text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit molestiae eveniet, accusantium similique recusandae ipsa? Consequatur amet magni ex sint voluptatum assumenda, hic, eum, dolorum saepe excepturi quam sunt inventore maxime illo! Assumenda ullam sunt in sequi odit temporibus dolor, nam ea adipisci cum modi quaerat quam eos harum recusandae accusamus labore molestiae perferendis laudantium. Sed inventore quod reprehenderit necessitatibus aspernatur odio cumque, dicta est fuga? Labore unde officiis sint!</p>
-                </div>
-
-                <div class="bg-blue-800 self-end max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <p class="text-base text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ipsa porro in beatae quisquam, maxime aliquid nemo explicabo totam nostrum maiores quidem quibusdam quam iure iste. Quis vel perspiciatis distinctio?</p>
-                </div>
-                <div class="bg-gray-100 self-start max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <div class="text-xs opacity-75">Mike</div>
-                    <div class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa sit quam illum architecto nihil, recusandae praesentium nostrum sed! Facilis, aspernatur!</div>
-                </div>
-
-                <div class="bg-gray-100 self-start max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <div class="text-xs opacity-75">Mike</div>
-                    <div class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, quibusdam!</div>
-                </div>
-                <div class="bg-blue-800 self-end max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <p class="text-base text-white">Hola</p>
-                </div>
-
-                <div class="bg-gray-100 self-start max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <div class="text-xs opacity-75">Mike</div>
-                    <div class="text-base">Este es un texto</div>
-                </div>
-                <div class="bg-blue-800 self-end max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <p class="text-base text-white">Hola</p>
-                </div>
-
-                <div class="bg-gray-100 self-start max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <div class="text-xs opacity-75">Mike</div>
-                    <div class="text-base">Este es un texto</div>
-                </div>
-                <div class="bg-blue-800 self-end max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <p class="text-base text-white">Hola</p>
-                </div>
-
-                <div class="bg-gray-100 self-start max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <div class="text-xs opacity-75">Mike</div>
-                    <div class="text-base">Este es un texto</div>
-                </div>
-                <div class="bg-blue-800 self-end max-w-message px-3 py-2 mb-4 rounded-lg">
-                    <p class="text-base text-white">Hola</p>
+                    <p class="text-base text-white">{{  }}</p>
                 </div>
 
             </div>
@@ -75,8 +35,22 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+        data() {
+            return {
+                messages: ''
+            }
+        },
+
+        created() {
+            this.fetchMessages();
+        },
+
+        methods: {
+            fetchMessages() {
+                axios.get('messages').then(response => {
+                    this.messages = response.data
+                })  
+            }
         }
     }
 </script>

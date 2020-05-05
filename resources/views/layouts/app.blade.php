@@ -32,6 +32,10 @@
         sign_out="{{ route('logout') }} "
         user_logged="{{ $user }}" 
       @endauth
+      @guest
+        sign_in="{{ route('login') }}"
+        register_user="{{ route('register') }}"  
+      @endguest
     >
     </navbar>
       

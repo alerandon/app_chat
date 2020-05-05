@@ -1,16 +1,22 @@
 <template>
-  
-  <div class="relative">
-    <button @click="isOpen = !isOpen" type="button" class="h-8 focus:outline-none">
-      <p class="text-white mx-4">
-        {{ user_logged }}
-        <img v-if="!isOpen" class="w-4 h-4 mb-1 inline-block" src="/assets/angle-down-solid.svg" rel="angle down">
-        <img v-if="isOpen" class="w-4 h-4 mb-1 inline-block" src="/assets/angle-up-solid.svg" rel="angle up">      
-      </p>    
-    </button>
-    <div :class="isOpen ? 'block' : 'hidden'" class="absolute right-0 py-2 mr-3 w-32 bg-gray-100 rounded-lg z-20 shadow-xl">
-      <a :href="sign_out" class="block hover:underline px-4 py-2">Sign out</a>
-    </div>        
+
+  <div>  
+    <div v-if="auth_user == true" class="relative">
+      <button @click="isOpen = !isOpen" type="button" class="h-8 focus:outline-none">
+        <p class="text-white mx-4">
+          {{ user_logged }}
+          <img v-if="!isOpen" class="w-4 h-4 mb-1 inline-block" src="/assets/angle-down-solid.svg" rel="angle down">
+          <img v-if="isOpen" class="w-4 h-4 mb-1 inline-block" src="/assets/angle-up-solid.svg" rel="angle up">      
+        </p>    
+      </button>
+      <div :class="isOpen ? 'block' : 'hidden'" class="absolute right-0 py-2 mr-3 w-32 bg-gray-100 rounded-lg z-20 shadow-xl">
+        <a :href="sign_out" class="block hover:underline px-4 py-2">Sign out</a>
+      </div>        
+    </div>
+    <div v-else class="text-white font-sans mt-px inline-block align-middle">
+      <a :href="sign_in" class="px-4">Login</a>
+      <a :href="register_user" class="px-4">Register</a>
+    </div>
   </div>
 
 </template>
@@ -27,6 +33,8 @@
       'auth_user',
       'sign_out',
       'user_logged',
+      'sign_in',
+      'register_user',
     ]
   }
 </script>

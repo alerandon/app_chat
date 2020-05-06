@@ -23,7 +23,7 @@
     </nav>
     <nav v-else :class="isOpen ? 'block' : 'hidden'" class="flex flex-col w-full h-auto md:hidden">
       <div class="block px-4 py-2 border-b">
-        <a :href="sign_in" class="text-white">Login</a>    
+        <a :href="sign_in" class="text-white">Sign In</a>    
       </div>
       <div class="block px-4 py-2">
         <a :href="register_user" class="text-white hover:underline">Register</a>

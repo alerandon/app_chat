@@ -14,7 +14,7 @@
       </div>        
     </div>
     <div v-else class="text-white font-sans mt-px inline-block align-middle">
-      <a :href="sign_in" class="px-4">Login</a>
+      <a :href="sign_in" class="px-4">Sign In</a>
       <a :href="register_user" class="px-4">Register</a>
     </div>
   </div>

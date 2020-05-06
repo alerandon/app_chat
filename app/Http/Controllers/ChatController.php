@@ -17,7 +17,6 @@ class ChatController extends Controller
     {
         $auth_users = Auth::check();
         $user = Auth::user()->name;
-        //dd($user);
         return view('chat', compact('auth_users', 'user'));
     }
 
@@ -31,8 +30,8 @@ class ChatController extends Controller
     public function sendMessage(Request $request)
     {
         $message = Message::create([
-            'user_id' => auth()->id(),
-            'text' => $request->all()
+            'user_id' => Auth::user()->id,
+            'text' => $request->message
         ]);
 
         return response()->json($message);
